@@ -10,12 +10,16 @@
 // ######################
 
 // Elementi
+const numeriUtente = parseInt(prompt('Inserisci il numero'));
+const arrNumeriUtente = []
+
 const numeriRandom = randomNumbers();
 const numeriOutput = document.querySelector('h1');
 const seconds = 5
 let counter = seconds;
 
 numeriOutput.innerHTML = numeriRandom;
+
 
 
 
@@ -33,14 +37,16 @@ console.log(numeriRandom);
 
 
 // funzione timer 5 sec
-function start() {
+function countDown() {
   const clock = setInterval(function(){
+    console.log(counter)
+
     counter--;
 
     if (counter === 0) {
       clearInterval(clock);
+      numeriOutput.style.display = "none";
     }
   },1000)
 }
-
-console.log(randomNumbers)
+countDown()
