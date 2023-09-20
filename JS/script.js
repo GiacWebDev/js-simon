@@ -12,26 +12,35 @@
 // Elementi
 const numeriRandom = randomNumbers();
 const numeriOutput = document.querySelector('h1');
+const seconds = 5
+let counter = seconds;
 
 numeriOutput.innerHTML = numeriRandom;
-
-
-
-
-
 
 
 
 // generazione 5 numeri casuali su 100
 function randomNumbers() {
   const numeriCasuali = [];
-
   while (numeriCasuali.length < 5) {
     const numeroCasuale = Math.floor(Math.random() * 100) + 1;
       numeriCasuali.push(numeroCasuale);
   }
-
   return numeriCasuali;
 }
-
 console.log(numeriRandom);
+
+
+
+// funzione timer 5 sec
+function start() {
+  const clock = setInterval(function(){
+    counter--;
+
+    if (counter === 0) {
+      clearInterval(clock);
+    }
+  },1000)
+}
+
+console.log(randomNumbers)
